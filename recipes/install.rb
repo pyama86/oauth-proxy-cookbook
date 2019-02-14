@@ -6,7 +6,7 @@ remote_file "#{c}/#{name}.tar.gz" do
 end
 
 execute 'install_oauth2_proxy' do
-  command "tar xf #{name}.tar.gz;mv #{name}/oauth2_proxy /usr/bin/oauth2_proxy"
+  command "tar xf #{name}.tar.gz;mv release/oauth2_proxy-linux-amd64 /usr/bin/oauth2_proxy"
   cwd c
   action :nothing
 end
