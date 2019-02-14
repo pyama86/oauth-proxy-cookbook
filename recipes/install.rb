@@ -1,6 +1,7 @@
 c = Chef::Config[:file_cache_path]
+name = "oauth2_proxy-v#{node["oauth2_proxy"]['version']}.linux-amd64.go1.11.tar.gz"
 remote_file "#{c}/#{name}.tar.gz" do
-  source "https://github.com/pusher/oauth2_proxy/releases/download/v#{node["oauth2_proxy"]['version']}/oauth2_proxy-v#{node["oauth2_proxy"]['version']}.linux-amd64.go1.11.tar.gz"
+  source "https://github.com/pusher/oauth2_proxy/releases/download/v#{node["oauth2_proxy"]['version']}/#{name}"
   notifies :run, 'execute[install_oauth2_proxy]'
 end
 
