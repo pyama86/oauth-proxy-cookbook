@@ -2,7 +2,7 @@
 actions :create
 default_action :create
 attribute :listen, required: true, kind_of: String
-attribute :redirect_url, required: true, kind_of: Hash
+attribute :redirect_url, required: true, kind_of: String
 attribute :upstream, required: true, kind_of: String
 attribute :email_domain, required: false, kind_of: String
 attribute :cookie_domain, required: false, kind_of: String
