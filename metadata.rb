@@ -1,4 +1,4 @@
-name 'oauth-proxy-cookbook'
+name 'oauth-proxy'
 maintainer 'pyama86'
 maintainer_email 'www.kazu.com@gmail.com'
 license 'All Rights Reserved'
