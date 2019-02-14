@@ -16,7 +16,7 @@ action :create do
     ]
 
     new_resource.options.each do |k,v|
-      exec_start << "-#{k.gsub(/_/, '-')}=#{v}"
+      exec_start << "-#{k.to_s.gsub(/_/, '-')}=#{v}"
     end
     service do
       type 'simple'
