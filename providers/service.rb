@@ -21,7 +21,6 @@ action :create do
     exec_start << "-client-id=#{new_resource.client_id}" if new_resource.client_id
     exec_start << "-client-secret=#{new_resource.client_secret}" if new_resource.client_secret
     exec_start << "-cookie-secret=#{new_resource.cookie_secret}" if new_resource.cookie_secret
-    exec_start << "-cookie-secret=#{new_resource.cookie_secret}" if new_resource.cookie_secret
     exec_start << "-oauth_provider=#{new_resource.oauth_provider}" if new_resource.oauth_provider
 
     service do
