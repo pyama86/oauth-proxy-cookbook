@@ -10,4 +10,4 @@ attribute :cookie_refresh, required: false, kind_of: String
 attribute :client_id, required: false, kind_of: String
 attribute :client_secret, required: false, kind_of: String
 attribute :cookie_secret, required: false, kind_of: String
-attribute :provider, required: false, kind_of: String
+attribute :oauth_provider, required: false, kind_of: String
