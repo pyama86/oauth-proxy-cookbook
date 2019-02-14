@@ -4,4 +4,4 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-include_recipe 'oauth-proxy-cookbook::install'
+include_recipe 'oauth_proxy::install'
