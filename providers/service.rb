@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 action :create do
-  systemd_service "oauth2_proxy_#{new_resource.name}" do
+  systemd_service "oauth_proxy_#{new_resource.name}" do
     unit_description "Systemd unit for oauth proxy #{new_resource.name}"
     after %w(network.target)
     install do
@@ -21,7 +21,7 @@ action :create do
 
     service do
       type 'simple'
-      environment_file "/etc/default/oauth2_proxy_#{new_resource.name}"
+      environment_file "/etc/default/oauth_proxy_#{new_resource.name}"
       exec_start exec_start.join(" ")
       restart 'on-failure'
       restart_sec '30s'
@@ -29,7 +29,7 @@ action :create do
     verify false
   end
 
-  service "oauth2_proxy_#{new_resource.name}" do
+  service "oauth_proxy_#{new_resource.name}" do
     action %i(start enable)
   end
 end
