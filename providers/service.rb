@@ -26,7 +26,6 @@ action :create do
 
     service do
       type 'simple'
-      environment_file "/etc/default/oauth_proxy_#{new_resource.name}"
       exec_start exec_start.join(" ")
       restart 'on-failure'
       restart_sec '30s'
