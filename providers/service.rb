@@ -12,7 +12,7 @@ action :create do
       "/usr/bin/oauth2_proxy",
       "-http-address=#{new_resource.listen}",
       "-redirect-url=#{new_resource.redirect_url}",
-      "-upstream=#{new_resource.redirect_url}"
+      "-upstream=#{new_resource.upstream}"
     ]
 
     exec_start << "-email-domain=#{new_resource.email_domain}" if new_resource.email_domain
