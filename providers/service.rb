@@ -18,6 +18,11 @@ action :create do
     exec_start << "-email-domain=#{new_resource.email_domain}" if new_resource.email_domain
     exec_start << "-cookie-domain=#{new_resource.cookie_domain}" if new_resource.cookie_domain
     exec_start << "-cookie-refresh=#{new_resource.cookie_refresh}" if new_resource.cookie_refresh
+    exec_start << "-client-id=#{new_resource.client_id}" if new_resource.client_id
+    exec_start << "-client-secret=#{new_resource.client_secret}" if new_resource.client_secret
+    exec_start << "-cookie-secret=#{new_resource.cookie_secret}" if new_resource.cookie_secret
+    exec_start << "-cookie-secret=#{new_resource.cookie_secret}" if new_resource.cookie_secret
+    exec_start << "-provider=#{new_resource.provider}" if new_resource.provider
 
     service do
       type 'simple'
@@ -27,9 +32,5 @@ action :create do
       restart_sec '30s'
     end
     verify false
-  end
-
-  service "oauth_proxy_#{new_resource.name}" do
-    action %i(start enable)
   end
 end

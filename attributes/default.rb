@@ -1,2 +1,2 @@
 
-default["oauth2_proxy"]['version'] = '2.2.0'
+default["oauth2_proxy"]['version'] = '3.1.0'
