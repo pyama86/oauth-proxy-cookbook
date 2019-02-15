@@ -12,7 +12,6 @@ action :create do
       "/usr/bin/oauth2_proxy",
       "-http-address=#{new_resource.listen}",
       "-redirect-url=#{new_resource.redirect_url}",
-      "-upstream=#{new_resource.upstream}"
     ]
 
     new_resource.options.each do |k,v|
