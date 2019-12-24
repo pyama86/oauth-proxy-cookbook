@@ -6,7 +6,7 @@ remote_file "#{c}/#{name}" do
 end
 
 execute 'install_oauth2_proxy' do
-  command "tar xf #{name};mv release/oauth2_proxy-linux-amd64.go#{node["oauth2_proxy"]['goversion']} /usr/bin/oauth2_proxy"
+  command "tar xf #{name};mv oauth2_proxy-linux-amd64.go#{node["oauth2_proxy"]['goversion']} /usr/bin/oauth2_proxy"
   cwd c
   action :nothing
 end
