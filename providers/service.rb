@@ -26,3 +26,10 @@ action :create do
     verify false
   end
 end
+
+action :delete do
+  systemd_service "oauth_proxy_#{new_resource.name}" do
+    action :delete
+    verify false
+  end
+end
