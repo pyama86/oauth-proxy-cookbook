@@ -1,5 +1,5 @@
 # To learn more about Custom Resources, see https://docs.chef.io/custom_resources.html
-actions :create
+actions :create, :delete
 default_action :create
 attribute :listen, required: true, kind_of: String
 attribute :redirect_url, required: true, kind_of: String
