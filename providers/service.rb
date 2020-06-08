@@ -15,7 +15,13 @@ action :create do
     ]
 
     new_resource.options.each do |k,v|
-      exec_start << "-#{k.to_s.gsub(/_/, '-')}=#{v}"
+      if k == 'whitelist_domain' && v.is_a?(Array)
+        v.each do |vv|
+          exec_start << "-#{k.to_s.gsub(/_/, '-')}=#{vv}"
+        end
+      else
+        exec_start << "-#{k.to_s.gsub(/_/, '-')}=#{v}"
+      end
     end
     service do
       type 'simple'
