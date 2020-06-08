@@ -15,7 +15,7 @@ action :create do
     ]
 
     new_resource.options.each do |k,v|
-      if k.to_sym == :whitelist_domain && v.is_a?(Array)
+      if %w(whitelist_domain cookie_domain).include?(k.to_s)  && v.is_a?(Array)
         v.each do |vv|
           exec_start << "-#{k.to_s.gsub(/_/, '-')}=#{vv}"
         end
