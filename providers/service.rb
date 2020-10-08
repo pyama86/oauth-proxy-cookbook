@@ -10,17 +10,17 @@ action :create do
 
     exec_start = [
       "/usr/bin/oauth2-proxy",
-      "-http-address=#{new_resource.listen}",
-      "-redirect-url=#{new_resource.redirect_url}",
+      "--http-address=#{new_resource.listen}",
+      "--redirect-url=#{new_resource.redirect_url}",
     ]
 
     new_resource.options.each do |k,v|
       if %w(whitelist_domain cookie_domain).include?(k.to_s)  && v.is_a?(Array)
         v.each do |vv|
-          exec_start << "-#{k.to_s.gsub(/_/, '-')}=#{vv}"
+          exec_start << "--#{k.to_s.gsub(/_/, '-')}=#{vv}"
         end
       else
-        exec_start << "-#{k.to_s.gsub(/_/, '-')}=#{v}"
+        exec_start << "--#{k.to_s.gsub(/_/, '-')}=#{v}"
       end
     end
     service do
