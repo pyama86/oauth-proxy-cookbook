@@ -9,7 +9,7 @@ action :create do
     end
 
     exec_start = [
-      "/usr/bin/oauth2_proxy",
+      "/usr/bin/oauth2-proxy",
       "-http-address=#{new_resource.listen}",
       "-redirect-url=#{new_resource.redirect_url}",
     ]
